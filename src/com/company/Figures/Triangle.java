@@ -3,12 +3,12 @@ package com.company.Figures;
 public class Triangle implements Shape {
     private double[] sideLengths;
 
-    public Triangle(double[] sideLengths){
+    public Triangle(double[] sideLengths) {
         this.sideLengths = sideLengths;
     }
 
     @Override
-    public double calculatePerimeter(){
+    public double calculatePerimeter() {
         float perimeter = 0;
         for (double sides : sideLengths) {
             perimeter += sides;
@@ -17,7 +17,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public  double calculateArea(){
+    public  double calculateArea() {
         double perimeter = calculatePerimeter();
         double[] areaParts = new double[3];
         double area = perimeter;

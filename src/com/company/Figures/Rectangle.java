@@ -9,11 +9,11 @@ public class Rectangle implements Shape {
 
     @Override
     public  double calculateArea() {
-        return (sideLengths[0]*sideLengths[1]);
+        return (sideLengths[0] * sideLengths[1]);
     }
 
     @Override
     public double calculatePerimeter() {
-        return (2*(sideLengths[0]+sideLengths[1]));
+        return (2 * (sideLengths[0] + sideLengths[1]));
     }
 }

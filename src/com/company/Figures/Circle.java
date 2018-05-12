@@ -2,18 +2,18 @@ package com.company.Figures;
 
 
 public class Circle implements Shape {
-    private float radius;
+    private double radius;
 
-    public Circle(float radius){
+    public Circle(double radius) {
         this.radius = radius;
     }
 
     @Override
-    public  double calculateArea(){
-        return (Math.PI*radius*radius);
+    public  double calculateArea() {
+        return (Math.PI * radius * radius);
     }
     @Override
-    public double calculatePerimeter(){
-        return (Math.PI*2*radius);
+    public double calculatePerimeter() {
+        return (Math.PI * 2 * radius);
     }
 }

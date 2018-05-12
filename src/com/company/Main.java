@@ -1,9 +1,6 @@
 package com.company;
 import com.company.Figures.*;
-
-
 import java.util.*;
-
 import java.util.Scanner;
 
 public class Main {
@@ -18,14 +15,14 @@ public class Main {
         shapesList shape;
         try {
              shape = shapesList.valueOf(scanner.nextLine().toLowerCase().trim());
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println("choose one of the figures from the list would you kindly");
             return;
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("input smthing baka");
             return;
         }
-        switch (shape){
+        switch (shape) {
             case circle:
                 processCircle();
                 break;
@@ -45,7 +42,16 @@ public class Main {
         System.out.println("Please input triangle's length of sides");
         double[] triSides = new double[3];
         for (int i = 0;i < triSides.length; i++) {
-            triSides[i] = Double.parseDouble(scanner.nextLine().trim());
+                try {
+                    triSides[i] = Math.abs(Double.parseDouble(scanner.nextLine().trim()));
+                } catch (NumberFormatException e) {
+                    System.out.println("input numbers idiot");
+                    return;
+                }
+           /* if (triSides[i] <= 0) {
+                System.out.println("numbers,unlike ur IQ, should be higher than zero");
+                return;
+            }*/
         }
         Triangle triangle = new Triangle(triSides);
         System.out.println("Triangle's perimeter: " + triangle.calculatePerimeter());
@@ -53,10 +59,19 @@ public class Main {
     }
 
     private static void processRectangle() {
-        System.out.println("Please input rectangle's length of sides");
-        double[] rectSides = new double[4];
+        System.out.println("Please input rectangle's length of 2 sides");
+        double[] rectSides = new double[2];
         for (int i = 0;i < rectSides.length; i++) {
-            rectSides[i] = Double.parseDouble(scanner.nextLine().trim());
+            try {
+                rectSides[i] = Math.abs(Double.parseDouble(scanner.nextLine().trim()));
+            } catch (NumberFormatException e) {
+                System.out.println("input numbers idiot");
+                return;
+            }
+          /*  if (rectSides[i] <= 0) {
+                System.out.println("numbers,unlike ur IQ, should be higher than zero");
+                return;
+            }*/
         }
         Rectangle rectangle = new Rectangle(rectSides);
         System.out.println("Rectangle's perimeter: " + rectangle.calculatePerimeter());
@@ -65,7 +80,13 @@ public class Main {
 
     private static void processSquare() {
         System.out.println("Please input square's length of side");
-        double side = Double.parseDouble(scanner.nextLine().trim());
+        double side;
+        try {
+            side = Math.abs(Double.parseDouble(scanner.nextLine().trim()));
+        } catch (NumberFormatException e) {
+            System.out.println("input numbers idiot");
+            return;
+        }
         Square square = new Square(side);
         System.out.println("Square's perimeter: " + square.calculatePerimeter());
         System.out.println("Square's area: " + square.calculateArea());
@@ -73,9 +94,16 @@ public class Main {
 
     private static void processCircle() {
         System.out.println("Please input circle's radius");
-        float rad = Float.parseFloat(scanner.nextLine().trim());
+        double rad;
+        try {
+            rad = Math.abs(Double.parseDouble(scanner.nextLine().trim()));
+        } catch (NumberFormatException e) {
+            System.out.println("input numbers idiot");
+            return;
+        }
         Circle circle = new Circle(rad);
         System.out.println("Circle's perimeter: " + circle.calculatePerimeter());
         System.out.println("Circle's area: " + circle.calculateArea());
     }
+
 }
