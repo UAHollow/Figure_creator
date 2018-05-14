@@ -77,10 +77,7 @@ public class Main {
             System.out.println("height and width,unlike ur IQ, should be higher than zero");
             return;
         }
-        if (rectHeight == rectWidth){
-            System.out.println("dis aint rectangle dis is square, bro");
-            return;
-        }
+      
         Rectangle rectangle = new Rectangle(rectHeight, rectWidth);
         System.out.println("Rectangle's perimeter: " + rectangle.calculatePerimeter());
         System.out.println("Rectangle's area: " + rectangle.calculateArea());
