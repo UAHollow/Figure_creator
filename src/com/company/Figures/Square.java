@@ -14,4 +14,8 @@ public class Square implements Shape {
     public double calculatePerimeter() {
         return (4 * sideLength);
     }
+
+    public double calculateDiag() {
+        return (sideLength*Math.sqrt(2));
+    }
 }

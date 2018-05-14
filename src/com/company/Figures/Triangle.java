@@ -1,30 +1,23 @@
 package com.company.Figures;
 
 public class Triangle implements Shape {
-    private double[] sideLengths;
+    private double sideA, sideB, sideC;
 
-    public Triangle(double[] sideLengths) {
-        this.sideLengths = sideLengths;
+    public Triangle(double sideA, double sideB, double sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
     }
 
     @Override
     public double calculatePerimeter() {
-        float perimeter = 0;
-        for (double sides : sideLengths) {
-            perimeter += sides;
-        }
-        return (perimeter);
+        return (sideA + sideB + sideC);
     }
 
     @Override
     public  double calculateArea() {
         double perimeter = calculatePerimeter();
-        double[] areaParts = new double[3];
-        double area = perimeter;
-        for (int i = 0; i < areaParts.length; i++) {
-            areaParts[i] = (perimeter - sideLengths[i]);
-            area *= areaParts[i];
-        }
+        double area = perimeter*(perimeter - sideA)*(perimeter - sideB)*(perimeter - sideC);
         return (Math.sqrt(area));
     }
 }
