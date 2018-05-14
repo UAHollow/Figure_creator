@@ -10,15 +10,15 @@ public class Rectangle implements Shape {
 
     @Override
     public  double calculateArea() {
-        return (height * width);
+        return height * width;
     }
 
     @Override
     public double calculatePerimeter() {
-        return (2 * (height + width));
+        return 2 * (height + width);
     }
 
     public double calculateDiag() {
-        return (Math.sqrt((height*height)+(width*width)));
+        return Math.sqrt((height*height)+(width*width));
     }
 }
