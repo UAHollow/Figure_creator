@@ -1,6 +1,6 @@
 package com.company.Figures;
 
-interface Shape {
+public interface Shape {
     double calculateArea();
     double calculatePerimeter();
 }

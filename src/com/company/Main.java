@@ -2,6 +2,10 @@ package com.company;
 import com.company.Figures.*;
 import java.util.*;
 import java.util.Scanner;
+import com.company.Builders.*;
+import com.company.Presentors.CirclePresentor;
+import com.company.Validators.*;
+
 
 public class Main {
     enum shapesList { circle, square, rectangle, triangle }
@@ -25,7 +29,12 @@ public class Main {
 
         switch (shape) {
             case circle:
-                processCircle();
+                double validRad = 0;
+                CircleBuilder circleBuilder = new CircleBuilder();
+                while(validRad == 0){
+                   validRad = CircleValidator.validate(circleBuilder.getRad());
+                }
+                CirclePresentor.present(circleBuilder.buildFigure(validRad));
                 break;
             case square:
                 processSquare();
@@ -73,11 +82,10 @@ public class Main {
             System.out.println("input numbers idiot");
             return;
         }
-        if (rectHeight <= 0 || rectWidth <=0) {
+        if (rectHeight <= 0 || rectWidth <= 0) {
             System.out.println("height and width,unlike ur IQ, should be higher than zero");
             return;
         }
-      
         Rectangle rectangle = new Rectangle(rectHeight, rectWidth);
         System.out.println("Rectangle's perimeter: " + rectangle.calculatePerimeter());
         System.out.println("Rectangle's area: " + rectangle.calculateArea());
@@ -99,24 +107,6 @@ public class Main {
         System.out.println("Square's area: " + square.calculateArea());
         System.out.println("Square's internal triangle's sides:");
         System.out.println("Sides A and B: " + side + ", Side C: " + square.calculateDiag());
-    }
-
-    private static void processCircle() {
-        System.out.println("Please input circle's radius");
-        double rad;
-        try {
-            rad = Double.parseDouble(scanner.nextLine().trim());
-        } catch (NumberFormatException e) {
-            System.out.println("input numbers idiot");
-            return;
-        }
-        if (rad <= 0) {
-            System.out.println("radius,unlike ur IQ, should be higher than zero");
-            return;
-        }
-        Circle circle = new Circle(rad);
-        System.out.println("Circle's perimeter: " + circle.calculatePerimeter());
-        System.out.println("Circle's area: " + circle.calculateArea());
     }
 
 }
