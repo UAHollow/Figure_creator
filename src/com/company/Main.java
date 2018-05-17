@@ -3,8 +3,7 @@ import com.company.Figures.*;
 import java.util.*;
 import java.util.Scanner;
 import com.company.Builders.*;
-import com.company.Presentors.CirclePresentor;
-import com.company.Validators.*;
+import com.company.Presentors.CirclePresenter;
 
 
 public class Main {
@@ -29,12 +28,8 @@ public class Main {
 
         switch (shape) {
             case circle:
-                double validRad = 0;
-                CircleBuilder circleBuilder = new CircleBuilder();
-                while(validRad == 0){
-                   validRad = CircleValidator.validate(circleBuilder.getRad());
-                }
-                CirclePresentor.present(circleBuilder.buildFigure(validRad));
+                Circle circle = CircleBuilder.buildFigure();
+                CirclePresenter.present(circle);
                 break;
             case square:
                 processSquare();

@@ -19,6 +19,6 @@ public class Rectangle implements Shape {
     }
 
     public double calculateDiag() {
-        return Math.sqrt((height*height)+(width*width));
+        return Math.sqrt((height*height) + (width*width));
     }
 }
