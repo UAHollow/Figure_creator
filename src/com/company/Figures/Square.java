@@ -13,15 +13,15 @@ public class Square implements Shape {
 
     @Override
     public  double calculateArea() {
-        return Math.pow(sideLength, 2);
+        return Math.pow(this.sideLength, 2);
     }
 
     @Override
     public double calculatePerimeter() {
-        return 4 * sideLength;
+        return 4 * this.sideLength;
     }
 
     public double calculateDiag() {
-        return sideLength*Math.sqrt(2);
+        return this.sideLength*Math.sqrt(2);
     }
 }

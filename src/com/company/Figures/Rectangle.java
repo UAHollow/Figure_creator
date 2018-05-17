@@ -8,17 +8,25 @@ public class Rectangle implements Shape {
         this.width = width;
     }
 
+    public double getHeight() {
+        return height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
     @Override
     public  double calculateArea() {
-        return height * width;
+        return this.height * this.width;
     }
 
     @Override
     public double calculatePerimeter() {
-        return 2 * (height + width);
+        return 2 * this.height + this.width;
     }
 
     public double calculateDiag() {
-        return Math.sqrt((height*height) + (width*width));
+        return Math.sqrt((this.height*this.height) + (this.width*this.width));
     }
 }

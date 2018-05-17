@@ -11,13 +11,13 @@ public class Triangle implements Shape {
 
     @Override
     public double calculatePerimeter() {
-        return sideA + sideB + sideC;
+        return this.sideA + this.sideB + this.sideC;
     }
 
     @Override
     public  double calculateArea() {
         double perimeter = calculatePerimeter();
-        double area = perimeter * (perimeter - sideA) * (perimeter - sideB) * (perimeter - sideC);
+        double area = perimeter * (perimeter - this.sideA) * (perimeter - this.sideB) * (perimeter - this.sideC);
         return Math.sqrt(area);
     }
 }
