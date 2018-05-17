@@ -10,10 +10,11 @@ public class Circle implements Shape {
 
     @Override
     public  double calculateArea() {
-        return (Math.PI * radius * radius);
+        return Math.PI * this.radius * this.radius;
     }
+
     @Override
     public double calculatePerimeter() {
-        return (Math.PI * 2 * radius);
+        return Math.PI * 2 * this.radius;
     }
 }
