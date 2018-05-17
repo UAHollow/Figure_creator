@@ -1,24 +1,23 @@
 package com.company.Builders;
-import com.company.Figures.Circle;
+import com.company.Figures.Square;
 import com.company.Validators.GreaterThanZeroValidator;
-
 import java.util.Scanner;
 
-public class CircleBuilder implements ShapeBuilder {
+public class SquareBuilder implements ShapeBuilder {
 
     private static final String NUMBER_INPUT_ERROR = "Input numbers idiot";
-    private static final String RADIUS_PROMPT = "Please input circle's radius";
+    private static final String SQUARE_PROMPT = "Please input square's side length";
 
     @Override
-    public Circle buildFigure() {
+    public Square buildFigure() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(RADIUS_PROMPT);
+        System.out.println(SQUARE_PROMPT);
         boolean inputIsCorrect = false;
-        double radius = 0;
+        double sideLength = 0;
         while (!inputIsCorrect) {
             try {
-                radius = Double.parseDouble(scanner.nextLine().trim());
-                String errorMessage = GreaterThanZeroValidator.validateParam(radius);
+                sideLength = Double.parseDouble(scanner.nextLine().trim());
+                String errorMessage = GreaterThanZeroValidator.validateParam(sideLength);
                 if (errorMessage != null) {
                     System.out.println(errorMessage);
                 } else {
@@ -28,6 +27,6 @@ public class CircleBuilder implements ShapeBuilder {
                 System.out.println(NUMBER_INPUT_ERROR);
             }
         }
-        return new Circle (radius);
+        return new Square(sideLength);
     }
 }

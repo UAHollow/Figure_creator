@@ -3,6 +3,10 @@ package com.company.Figures;
 public class Square implements Shape {
     private double sideLength;
 
+    public double getSideLength() {
+        return sideLength;
+    }
+
     public Square(double sideLength) {
         this.sideLength = sideLength;
     }

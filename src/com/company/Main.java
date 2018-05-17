@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Scanner;
 import com.company.Builders.*;
 import com.company.Presentors.CirclePresenter;
+import com.company.Presentors.SquarePresenter;
 
 
 public class Main {
@@ -28,10 +29,12 @@ public class Main {
 
         switch (shape) {
             case circle:
-                Circle circle = CircleBuilder.buildFigure();
+                Circle circle = new CircleBuilder().buildFigure();
                 CirclePresenter.present(circle);
                 break;
             case square:
+                Square square = new SquareBuilder().buildFigure();
+                SquarePresenter.present(square);
                 processSquare();
                 break;
             case rectangle:
@@ -98,10 +101,7 @@ public class Main {
             return;
         }
         Square square = new Square(side);
-        System.out.println("Square's perimeter: " + square.calculatePerimeter());
-        System.out.println("Square's area: " + square.calculateArea());
-        System.out.println("Square's internal triangle's sides:");
-        System.out.println("Sides A and B: " + side + ", Side C: " + square.calculateDiag());
+
     }
 
 }
