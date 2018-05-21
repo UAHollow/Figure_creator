@@ -1,4 +1,4 @@
-package com.company.Presentors;
+package com.company.Presenters;
 
 import com.company.Figures.Rectangle;
 

@@ -1,12 +1,9 @@
 package com.company;
 import com.company.Figures.*;
 import java.util.*;
-import java.util.Scanner;
 import com.company.Builders.*;
-import com.company.Presentors.CirclePresenter;
-import com.company.Presentors.RectanglePresenter;
-import com.company.Presentors.SquarePresenter;
-import com.company.Presentors.TrianglePresenter;
+import com.company.Presenters.*;
+
 
 
 public class Main {
